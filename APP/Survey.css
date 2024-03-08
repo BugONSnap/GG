@@ -35,7 +35,6 @@ header {
     z-index: 1000; /* Ensure header is on top of other elements */
 }
 
-
 .logo {
     width: 40px;
     height: 40px;
@@ -127,6 +126,7 @@ nav ul li a:hover {
     background-color: #b7b7b7;
     border-radius: 3px;
 }
+
 button {
     background-color: #4C4545;
     border: none;
@@ -147,26 +147,15 @@ button {
 
 .container {
     display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange children elements vertically */
     align-items: center; /* Center children horizontally */
     justify-content: center; /* Center children vertically */
     width: 25%;
-    background-color: pink;
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin: 20px; /* Added 'px' after 20 */
     text-align: center; /* Center text horizontally */
     position: relative; /* Add position relative to create a stacking context for the pseudo-element */
-}
-
-.container::after {
-    content: ""; /* Create a pseudo-element */
-    position: absolute; /* Position it absolutely */
-    top: 12px;
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.2); /* White color with some opacity */
-    pointer-events: none; /* Ensure clicks pass through the pseudo-element */
-    z-index: 1; /* Place the pseudo-element above the container */
-    border-radius: 3px; /* Ensure the border-radius matches the container */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Add a soft glow effect */
 }
 
 @media only screen and (max-width: 768px) {
@@ -175,18 +164,18 @@ button {
         margin: 20px 0; /* Adjusted margin for responsiveness */
     }
 }
-#BSCS {
+#S1 {
     /* Linear gradient from left to right */
-    background: linear-gradient(to right, #4D4545, #755A5A);
-    width: 300px;
-    height: 150px;
+    background:linear-gradient(to right, #4D4545, #755A5A);
+    width: 160px;
+    height: 100px;
     border-radius: 3px;
     position: relative;
-    top: -30%;
-    left: 1vh;
+    top: 60%;
+    left: 31vh;
 }
 
-#BSIT {
+#S2 {
     /* Linear gradient from left to right */
     background: linear-gradient(to right, #4D4545, #755A5A);
     width: 160px;
@@ -197,28 +186,27 @@ button {
     left: 61vh;
 }
 
-#BSEMC {
+#S3 {
     /* Linear gradient from left to right */
     background: linear-gradient(to right, #4D4545, #755A5A);
     width: 160px;
     height: 100px;
     border-radius: 3px;
     position: relative;
-    top: -40%;
-    left: 61vh;
+    top: -140%;
+    left: 91vh;
 }
 
-#BSACT {
+#S4 {
     /* Linear gradient from left to right */
     background: linear-gradient(to left, #4D4545, #755A5A);
     width: 160px;
     height: 100px;
     border-radius: 3px;
     position: relative;
-    top: 20vh;
-    left: 12%;
+    top: -240%;
+    left: 121vh;
 }/* CSS for screens larger than 768px */
-
 @media only screen and (min-width: 769px) {
     .dashboard-section {
         top: 30px; /* Height of header */
@@ -264,74 +252,153 @@ button {
     }
 }
 .search-bar {
-    position: relative;
-    top: -63px;
-    left: 11%;
-    width: 20%;
-    border:  1px solid black;
-    border-radius: 3px;
-    background-color: aliceblue;
- 
+    flex-grow: 1; /* Allows the search bar to grow and take up remaining space */
+    margin-right: 10px; /* Add some space between search bar and navigation buttons */
 }
 
-.survey-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.page-navigation {
+    display: flex;
+    align-items: center;
 }
 
-    .survey-item {
-        background-color: ;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0,0, 0, 0, 0.1);
-        position: relative;
-    }
-    .survey-number {
-        position: absolute;
-        top: 15px;
-        left: 0;
-        background-color: #4C4545;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
-    
-    .date {
-        position: absolute;
-        bottom: -15px;
-        left: 0;
-        font-size: 12px;
-    }
-    
-    .underline {
-        border-bottom: 1px solid #000000;
-        margin: 10px 0;
-    }
+.page-navigation button {
+    margin-left: 10px; /* Add space between navigation buttons */
+}
+
+@media only screen and (max-width: 768px) {
+    .bottom-bar {
+        position: static;
    
-    .bottom-right {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        flex-direction: column;
     }
+
+    .search-bar {
+        border: #4D4545;
+        
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .page-navigation {
+        flex-direction: column;
+
+    }
+
+    .page-navigation button {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 155vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+    background-color: #D9D9D9;
+    padding: 10px 20px;
+
+}
+.dashboard-section {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #E0E0E0; /* Grey background */
+}
+.dashboard-section{
+    position: fixed;
+    top: 50px;
+    height: 10px; /* Height of header */
+    left: 230px;
+    width: 20%
+}
+#datetime{
+    position: relative;
+    display: flex;
+    top: 5px;
+    left: 85vh;
+    width: 460vh;
+}
+#DB {
+    margin-right: 10px;
+}
+
+.search-icon {
+    margin-right: 10px;
+}
+
+.search-icon img {
+    width: 20px; /* Adjust icon size as needed */
+    height: 20px;
     
-    .pagination {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .pagination button {
-        background-color: #4C4545;
-        border: none;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    .pagination span {
-        font-weight: bold;
-    }
+}
+#sk{
+    width: 20px;
+}
+
+.search-bar {
+    flex-grow: 1;
+    background-color: #FFFFFF; /* White background for search bar */
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 110;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D9D9D9;
+}
+.survey-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+
+.date-made {
+    font-size: 12px;
+}
+
+.survey-title {
+    margin-bottom: 10px;
+}
+
+.input-box {
+    border-bottom: 1px solid #000; /* Underline effect */
+    margin-bottom: 10px;
+}
+
+.input-box input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+}
+
+.view-analysis-btn {
+    background-color: #4C4545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto; /* Align button to the right */
+}
