@@ -1,0 +1,337 @@
+body {
+    font-family: 'Cambria';
+    background: #D9D9D9;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.dashboard-section{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    place-items: left;
+}
+#datetime{
+    position: relative;
+    top: -80px;
+    left: 80%;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #D9D9D9;
+    padding: 10px;
+    font-size: 24px;
+    color: rgb(20, 20, 20);
+    border-bottom: 2px solid #b1aaaa;
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Ensure header is on top of other elements */
+}
+
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-img {
+    width: 130%;
+    height: auto;
+}
+
+.header-text {
+    font-weight: bold;
+}
+
+.icon {
+    position: fixed;
+    top: -25px;
+    left: 70%;
+    font-size: 15px;
+}
+#userIcon{
+    position: relative;
+    top: 25px;
+    left: 21vh;
+    width: 60px;
+}
+.icon-dropdown {
+    position: relative;
+    border-radius: 3px;
+}
+
+.icon-dropdown-content {
+    display: none;
+    border-radius: 3px;
+    position: absolute;
+    background-color: #D9D9D9;
+    min-width: 120px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.icon-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.icon-dropdown-content a:hover {
+    background-color: #b7b7b7;
+}
+
+.icon-dropdown:hover .icon-dropdown-content {
+    display: block;
+}
+
+nav {
+    width: 14%;
+    height: 100vh;
+    background: #D9D9D9;
+    border-right: 2px solid #b1aaaa;
+    position: fixed;
+    top: 5%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto;
+    gap: 1px;
+    margin-left: 10px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+.dashboard-section {
+    position: fixed;
+    top: 30px; /* Height of header */
+    right: 0;
+    width: calc(100% - 14%);
+}
+nav ul li a:hover {
+    background-color: #b7b7b7;
+    border-radius: 3px;
+}
+button {
+    background-color: #4C4545;
+    border: none;
+    width: 100%;
+    max-width: 150px;
+    color: white;
+    padding: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.container {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    width: 25%;
+    background-color: pink;
+    text-align: center; /* Center text horizontally */
+    position: relative; /* Add position relative to create a stacking context for the pseudo-element */
+}
+
+.container::after {
+    content: ""; /* Create a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.2); /* White color with some opacity */
+    pointer-events: none; /* Ensure clicks pass through the pseudo-element */
+    z-index: 1; /* Place the pseudo-element above the container */
+    border-radius: 3px; /* Ensure the border-radius matches the container */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Add a soft glow effect */
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%; /* Adjusted width for responsiveness */
+        margin: 20px 0; /* Adjusted margin for responsiveness */
+    }
+}
+#BSCS {
+    /* Linear gradient from left to right */
+    background: linear-gradient(to right, #4D4545, #755A5A);
+    width: 300px;
+    height: 150px;
+    border-radius: 3px;
+    position: relative;
+    top: -30%;
+    left: 1vh;
+}
+
+#BSIT {
+    /* Linear gradient from left to right */
+    background: linear-gradient(to right, #4D4545, #755A5A);
+    width: 160px;
+    height: 100px;
+    border-radius: 3px;
+    position: relative;
+    top: -40%;
+    left: 61vh;
+}
+
+#BSEMC {
+    /* Linear gradient from left to right */
+    background: linear-gradient(to right, #4D4545, #755A5A);
+    width: 160px;
+    height: 100px;
+    border-radius: 3px;
+    position: relative;
+    top: -40%;
+    left: 61vh;
+}
+
+#BSACT {
+    /* Linear gradient from left to right */
+    background: linear-gradient(to left, #4D4545, #755A5A);
+    width: 160px;
+    height: 100px;
+    border-radius: 3px;
+    position: relative;
+    top: 20vh;
+    left: 12%;
+}/* CSS for screens larger than 768px */
+
+@media only screen and (min-width: 769px) {
+    .dashboard-section {
+        top: 30px; /* Height of header */
+        right: 0;
+        width: calc(100% - 14%);
+    }
+}
+
+/* CSS for screens smaller than or equal to 768px */
+@media only screen and (max-width: 768px) {
+    .dashboard-section {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        position: static;
+        border-right: none;
+    }
+    
+    nav ul {
+        margin-left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    #BSCS,
+    #BSIT,
+    #BSEMC,
+    #BSACT {
+        width: 100%;
+        left: 0;
+        margin-top: 20px;
+    }
+}
+.search-bar {
+    position: relative;
+    top: -63px;
+    left: 11%;
+    width: 20%;
+    border:  1px solid black;
+    border-radius: 3px;
+    background-color: aliceblue;
+ 
+}
+
+.survey-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+    .survey-item {
+        background-color: ;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0,0, 0, 0, 0.1);
+        position: relative;
+    }
+    .survey-number {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        background-color: #4C4545;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    
+    .date {
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        font-size: 12px;
+    }
+    
+    .underline {
+        border-bottom: 1px solid #000000;
+        margin: 10px 0;
+    }
+   
+    .bottom-right {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .pagination {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .pagination button {
+        background-color: #4C4545;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .pagination span {
+        font-weight: bold;
+    }

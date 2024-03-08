@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+       function generateDateTime() {
+    var currentDate = new Date();
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+    var formattedDateTime = currentDate.toLocaleDateString('en-US', options);
+    document.getElementById("datetime").innerHTML = formattedDateTime;
+}
+
+// Call the function when the page loads to initially display the date and time
+window.onload = function() {
+    generateDateTime();
+};
+        </script>
+
+    <title>Formalytics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="DS.css">
+</head >
+<body>
+    <header>
+        <div class="logo">
+            <img src="/APP/IMGS/BG.png" alt="FORMALYTICS" class="logo-img">
+        </div>
+        <div class="header-text">
+            FORMALYTICS
+        </div>
+        <div class="icon icon-dropdown">
+            <a href="#user">
+                <img src="/APP/IMGS/BG.png" alt="User Icon" id="userIcon">
+                USER PROFILE
+            </a>
+            <div class="icon-dropdown-content">
+                <a href="login.html">Log out</a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><button>CREATE SURVEY +</button></li>
+            <li><a href="#dashboard"><img src="/APP/IMGS/collage.png" alt="Dashboard Icon"> <h2>DASHBOARD</h2></a></li>
+            <li><a href="Survey.html"><img src="/APP/IMGS/checkdash.png" alt="Survey List Icon"> <h2>SURVEY LIST</h2></a></li>
+            <li><a href="#bscs"><img src="/APP/IMGS/porygon.png" alt="BSCS Icon"> <h2>BSCS</h2></a></li>
+            <li><a href="#bsit"><img src="/APP/IMGS/porygon.png" alt="BSIT Icon"> <h2>BSIT</h2></a></li>
+            <li><a href="#bsemc"><img src="/APP/IMGS/porygon.png" alt="BSEMC Icon"> <h2>BSEMC</h2></a></li>
+            <li><a href="#act"><img src="/APP/IMGS/porygon.png" alt="ACT Icon"> <h2>ACT</h2></a></li>
+        </ul>
+</nav>
+<div class="dashboard-section">
+    <h2>DASHBOARD</h2>
+    <div class="date-time">
+        <p id="datetime"></p>
+    </div>
+</div>
+<div class="container" id="BSCS">
+    <h3>BSCS</h3>
+    <p>50 Total Responders</p>
+</div>
+
+<div class="container" id="BSIT">
+    <h3>BSIT</h3>
+    <p>50 Total Responders</p>
+</div>
+
+<div class="container" id="BSEMC">
+    <h3>BSEMC</h3>
+    <p>50 Total Responders</p>
+</div>
+
+<div class="container" id="BSACT">
+    <h3>BSACT</h3>
+    <p>50 Total Responders</p>
+</div>
+</body>
+</html>
